@@ -4,11 +4,10 @@ import { LocaleProvider } from "@/lib/locale-context";
 import { defaultLocale, getDictionary } from "@/lib/i18n";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const messages = await getDictionary(defaultLocale);
-
   return {
-    title: messages.hero.headline,
-    description: messages.hero.description,
+    title: "Join Your Village | HUGGED",
+    description:
+      "India's first guilt-free parenting village for all stages of parenthood. Connect, learn and find support with HUGGED.",
   };
 }
 

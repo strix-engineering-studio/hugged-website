@@ -1,38 +1,35 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
   subsets: ["latin"],
-});
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hugged.app"),
+  metadataBase: new URL("https://hugged.in"),
+  alternates: { canonical: "/" },
   title: {
-    default: "Hugged | Calm support for modern motherhood",
-    template: "%s | Hugged",
+    default: "HUGGED | India’s Guilt-Free Parenting Village",
+    template: "%s | HUGGED",
   },
   description:
-    "Hugged is a premium emotionally intelligent parenting ecosystem for venting freely, learning calmly, and finding real support.",
+    "India’s first guilt-free parenting village for all stages of parenthood. Connect, learn and find support with HUGGED.",
   openGraph: {
-    title: "Hugged | Calm support for modern motherhood",
-    description:
-      "A breathable one-page ecosystem for mothers who need emotional safety, expert guidance, and community.",
-    url: "https://hugged.app",
+    title: "HUGGED | Join Your Village",
+    description: "A guilt-free parenting village for all stages of parenthood.",
+    url: "https://hugged.in",
     siteName: "Hugged",
     type: "website",
+    images: [{ url: "/images/brand-character-design/mom/mom-smile-f.png", alt: "A HUGGED parent character" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hugged | Calm support for modern motherhood",
-    description:
-      "A premium parenting ecosystem designed to feel soft, safe, and emotionally intelligent.",
+    title: "HUGGED | Join Your Village",
+    description: "A guilt-free parenting village for all stages of parenthood.",
+    images: ["/images/brand-character-design/mom/mom-smile-f.png"],
   },
 };
 
@@ -44,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} h-full antialiased scroll-smooth`}
+      className={`${quicksand.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
