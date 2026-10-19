@@ -1,0 +1,100 @@
+ Volume in drive P is New Volume
+ Volume Serial Number is FC06-7E96
+
+ Directory of P:\project\Hugged\web\public
+
+[.]                  hugged-3d-logo.png   next.svg
+[..]                 hugged-logo.png      vercel.svg
+facebook.svg         Hugged_TM.png        window.svg
+file.svg             [images]             youtube.svg
+[fonts]              instagram.svg        
+globe.svg            linkedin.svg         
+              12 File(s)        396,786 bytes
+
+ Directory of P:\project\Hugged\web\public\fonts
+
+[.]                  DMSans-Bold.ttf      
+[..]                 DMSans-Medium.ttf    
+Avenir.ttc           DMSans-Regular.ttf   
+               4 File(s)      1,813,008 bytes
+
+ Directory of P:\project\Hugged\web\public\images
+
+[.]                        hugged-play-store-qr.svg
+[..]                       hugged.gif
+[brand-character-design]   [illustrations]
+[build]                    [mascot]
+google-play-badge.png      
+               3 File(s)         33,581 bytes
+
+ Directory of P:\project\Hugged\web\public\images\brand-character-design
+
+[.]       [baby]    [grandma] [mom]     
+[..]      [dad]     [grandpa] [nanny]   
+               0 File(s)              0 bytes
+
+ Directory of P:\project\Hugged\web\public\images\brand-character-design\baby
+
+[.]            bb-angry.png   bb-cry.png     bb-sit.png     
+[..]           bb-crawl.png   bb-laugh.png   bb-stand.png   
+               6 File(s)      6,565,586 bytes
+
+ Directory of P:\project\Hugged\web\public\images\brand-character-design\dad
+
+[.]               dad-happy.png     dad-smile-s.png   
+[..]              dad-sad.png       dad-tired.png     
+dad-angry.png     dad-smile-f.png   
+               6 File(s)      6,824,232 bytes
+
+ Directory of P:\project\Hugged\web\public\images\brand-character-design\grandma
+
+[.]               gma-happy.png     gma-smile.png     
+[..]              gma-sad.png       gma-tired.png     
+gma-angry.png     gma-smile-f.png   
+               6 File(s)      8,143,409 bytes
+
+ Directory of P:\project\Hugged\web\public\images\brand-character-design\grandpa
+
+[.]               gpa-angry.png     gpa-smile-f.png   
+[..]              gpa-happy.png     gpa-smile.png     
+.DS_Store         gpa-sad.png       gpa-tired.png     
+               7 File(s)      5,955,823 bytes
+
+ Directory of P:\project\Hugged\web\public\images\brand-character-design\mom
+
+[.]               mom-angry.png     mom-smile-f.png   
+[..]              mom-happy.png     mom-smile-s.png   
+.DS_Store         mom-sad.png       mom-tired.png     
+               7 File(s)      6,402,863 bytes
+
+ Directory of P:\project\Hugged\web\public\images\brand-character-design\nanny
+
+[.]               nan-happy.png     nan-smile-s.png   
+[..]              nan-sad.png       nan-tired.png     
+nan-angry.png     nan-smile-f.png   
+               6 File(s)      9,821,655 bytes
+
+ Directory of P:\project\Hugged\web\public\images\build
+
+[.]              [..]             .last_build_id   
+               1 File(s)             32 bytes
+
+ Directory of P:\project\Hugged\web\public\images\illustrations
+
+[.]           intro-1.png   intro-3.png   
+[..]          intro-2.png   map.png       
+               4 File(s)      2,936,323 bytes
+
+ Directory of P:\project\Hugged\web\public\images\mascot
+
+[.]                       msc-family-banner-1.png   msc-privacy.png
+[..]                      msc-family-banner.png     msc-sad.png
+msc-angry.png             msc-language.png          msc-tired.png
+msc-chat-hi.png           msc-no-internet.png       
+msc-coins.png             msc-not-found.png         
+msc-confused.png          msc-notification.png      
+              13 File(s)     17,903,294 bytes
+
+     Total Files Listed:
+              75 File(s)     66,796,592 bytes
+              38 Dir(s)  35,654,303,744 bytes free

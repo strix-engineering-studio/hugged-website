@@ -15,6 +15,9 @@ importers:
       '@base-ui/react':
         specifier: ^1.5.0
         version: 1.5.0(@date-fns/tz@1.5.0)(@types/react@19.2.15)(date-fns@4.3.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@phosphor-icons/react':
+        specifier: ^2.1.10
+        version: 2.1.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -948,6 +951,13 @@ packages:
   '@opentelemetry/api@1.9.1':
     resolution: {integrity: sha512-gLyJlPHPZYdAk1JENA9LeHejZe1Ti77/pTeFm/nMXmQH/HFZlcS/O2XJB+L8fkbrNSqhdtlvjBVjxwUYanNH5Q==}
     engines: {node: '>=8.0.0'}
+
+  '@phosphor-icons/react@2.1.10':
+    resolution: {integrity: sha512-vt8Tvq8GLjheAZZYa+YG/pW7HDbov8El/MANW8pOAz4eGxrwhnbfrQZq0Cp4q8zBEu8NIhHdnr+r8thnfRSNYA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>= 16.8'
+      react-dom: '>= 16.8'
 
   '@protobufjs/aspromise@1.1.2':
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
@@ -5672,6 +5682,11 @@ snapshots:
 
   '@opentelemetry/api@1.9.1':
     optional: true
+
+  '@phosphor-icons/react@2.1.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
 
   '@protobufjs/aspromise@1.1.2': {}
 

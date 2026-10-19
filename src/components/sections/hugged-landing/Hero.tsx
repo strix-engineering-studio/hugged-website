@@ -1,128 +1,91 @@
-"use client";
-
-import Image from "next/image";
-import { ArrowRight, MessageCircleMore } from "lucide-react";
-import { useTranslations } from "@/lib/locale-context";
 import { Button } from "@/components/ui/button";
-import { SectionHeading } from "@/components/shared/section-heading";
-import { CoralBlob, illustrationSrc } from "@/components/graphics/hugged-graphics";
-import { SectionFrame, Reveal, MotionOrb } from "./shared";
+import { Assets } from "@/lib/assets";
+import { PLAY_STORE_URL, WAITLIST_URL } from "@/lib/constant";
+import { ArrowDown, Heart } from "lucide-react";
+import Image from "next/image";
 
-export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
-  const messages = useTranslations();
-
+export default function Hero({
+  onNavigate,
+}: {
+  onNavigate: (id: string) => void;
+}) {
   return (
-    <SectionFrame id="hero" className="overflow-hidden pt-8 md:pt-12 lg:pt-16">
-      <div className="relative overflow-hidden rounded-[2.5rem] border border-white/60 bg-white/55 px-6 py-10 shadow-[0_30px_90px_rgba(17,17,17,0.06)] backdrop-blur-sm md:px-10 md:py-14 lg:px-14 lg:py-16 dark:border-white/10 dark:bg-white/5">
-        <MotionOrb tone="coral" className="left-0 top-0 h-72 w-72 -translate-x-1/3 -translate-y-1/3" />
-        <MotionOrb tone="mint" className="bottom-0 right-0 h-72 w-72 translate-x-1/3 translate-y-1/3" />
-        <CoralBlob className="absolute left-[55%] top-[-12%] h-[140%] w-full opacity-70 lg:left-[48%]" />
-        
-        {/* Subtle HUGGED gradient glow using Coral Hug and Spearmint */}
-        <div className="pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(255,111,97,0.12)_0%,transparent_70%)] blur-3xl" />
-        <div className="pointer-events-none absolute -right-20 -bottom-20 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(97,212,196,0.12)_0%,transparent_70%)] blur-3xl" />
-
-        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
-          <Reveal className="relative z-10 max-w-3xl">
-            <SectionHeading
-              eyebrow={messages.hero.eyebrow}
-              title={messages.hero.headline}
-              description={messages.hero.description}
+    <section
+      id="hero"
+      className="relative isolate flex min-h-[calc(100svh-78px)] scroll-mt-24 items-center overflow-hidden bg-[#ff6f61] px-5 py-14 md:px-10 md:py-16"
+    >
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_78%_50%,rgba(94,181,166,.20),transparent_40%),radial-gradient(ellipse_at_15%_80%,rgba(255,111,97,.18),transparent_35%)]"
+      />
+      <div className="mx-auto grid w-full max-w-[1320px] items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
+        <div className="relative z-10 max-w-2xl">
+          {/* <p className="mb-5 inline-flex rounded-full border border-[#5eb5a6]/40 bg-white/75 px-4 py-2 text-[11px] font-bold uppercase tracking-[.2em] text-[#333333]">India’s first guilt-free parenting village</p> */}
+          <h1 className="font-heading text-5xl font-bold leading-[1.02] tracking-[-.045em] text-white sm:text-9xl lg:text-9xl">
+            Join your
+            <div />
+            village
+          </h1>
+          <p className="mt-4 max-w-xl text-lg leading-7 text-white md:mt-5 md:text-3xl md:leading-10">
+            India’s first guilt-free parenting village for all stages of
+            parenthood.
+          </p>
+          {/* <p className="mt-3 max-w-lg text-sm leading-6 text-[#333333]/65">A community to share, learn and feel supported, on the real days of parenting.</p> */}
+          {/* <div className="mt-8 flex flex-wrap items-center gap-4"> */}
+          {/* <Button variant="outline" onClick={() => onNavigate("village")} className="h-12 rounded-full border-[#333333]/25 bg-white/70 px-6 text-[#333333] hover:bg-white">Explore the village <ArrowDown className="ml-2 size-4"/></Button> */}
+          {/* <a href={WAITLIST_URL} target="_blank" rel="noreferrer" className="rounded-full px-3 py-2 text-sm font-semibold text-[#333333] underline decoration-[#5eb5a6] underline-offset-4">Join the waitlist</a> */}
+          {/* </div> */}
+          {/* <p className="mt-4 text-xs font-medium text-[#333333]/60">Google Play is available. The App Store link will be added when it is confirmed.</p> */}
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-7 hidden w-fit items-center gap-3 rounded-xl border-2 border-[#333333] bg-white p-3 shadow-sm sm:flex"
+          >
+            <Image
+              src="/images/hugged-play-store-qr.svg"
+              alt=""
+              width={88}
+              height={88}
+              unoptimized
+              className="size-[88px]"
             />
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Button
-                className="h-12 rounded-full bg-foreground px-6 text-background shadow-[0_16px_42px_rgba(17,17,17,0.12)] hover:bg-foreground/90 font-medium cursor-pointer"
-                onClick={() => onNavigate("waitlist")}
-              >
-                {messages.hero.primaryCta}
-                <ArrowRight className="size-4" />
-              </Button>
-              <Button
-                variant="outline"
-                className="h-12 rounded-full border-border/80 bg-white/80 px-6 text-foreground hover:bg-white cursor-pointer dark:bg-neutral-800/80 dark:hover:bg-neutral-700"
-                onClick={() => onNavigate("how-hugged-helps")}
-              >
-                {messages.hero.secondaryCta}
-              </Button>
+            <div className="flex flex-col items-center justify-left">
+              <span className="max-w-40 text-left text-md font-medium leading-5 text-black">
+                <h3 className="font-bold text-left">Scan to Join</h3>
+              </span>
+              <Image
+                src="/images/google-play-badge.png"
+                alt="Get it on Google Play"
+                width={194}
+                height={72}
+                priority
+                className="h-[58px] w-auto"
+              />
             </div>
-            
-            {/* Trust Indicators */}
-            <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-400">
-              {((messages.hero as any).trust || ["Expert-led", "Homeschool support", "Parent community"]).map((badge: string) => (
-                <div key={badge} className="flex items-center gap-1.5">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-mint-soft text-mint dark:bg-mint-soft/10">
-                    <svg className="h-3 w-3 stroke-[3.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <span>{badge}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 grid gap-3 text-sm text-neutral-600 sm:grid-cols-3 dark:text-neutral-400">
-              {messages.hero.badges.map((badge: string) => (
-                <span
-                  key={badge}
-                  className="rounded-full border border-neutral-200 bg-white/70 px-4 py-2 shadow-sm dark:border-neutral-800 dark:bg-neutral-900/70"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1} className="relative z-10">
-            <div className="relative mx-auto aspect-4/5 max-w-130 rounded-[2.5rem] border border-white/80 bg-white/60 p-4 shadow-[0_45px_100px_rgba(44,43,40,0.12),0_15px_35px_rgba(44,43,40,0.04)] backdrop-blur-sm transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_60px_120px_rgba(44,43,40,0.18),0_20px_50px_rgba(255,111,97,0.08)] dark:border-white/10 dark:bg-neutral-900/60">
-              <MotionOrb tone="coral" className="left-8 top-8 h-40 w-40" />
-              <MotionOrb tone="mint" className="bottom-8 right-6 h-48 w-48" />
-              <div className="absolute inset-4 overflow-hidden rounded-[2rem] bg-neutral-100/90">
-                <Image
-                  src={illustrationSrc("hero")}
-                  alt="Layered mother and child composition"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="absolute left-6 top-8 rounded-full bg-white/85 dark:bg-neutral-900/85 px-4 py-2 text-xs font-medium text-neutral-700 dark:text-neutral-300 shadow-[0_10px_30px_rgba(17,17,17,0.08)] backdrop-blur-sm">
-                emotional safety first
-              </div>
-              <div className="absolute right-6 top-20 rounded-[1.5rem] bg-white/90 dark:bg-neutral-900/90 p-4 shadow-[0_10px_34px_rgba(17,17,17,0.08)] backdrop-blur-sm border border-white/40 dark:border-white/5">
-                <div className="flex items-center gap-3">
-                  <div className="grid size-11 place-items-center rounded-full bg-coral-soft text-coral dark:bg-coral-soft/20">
-                    <MessageCircleMore className="size-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.26em] text-neutral-400">
-                      Today
-                    </p>
-                    <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                      A space to vent without judgement
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-3">
-                {[
-                  ["Venting", "92%"],
-                  ["Comfort", "4.9"],
-                  ["Groups", "18"],
-                ].map(([label, value]) => (
-                  <div
-                    key={label}
-                    className="rounded-[1.5rem] bg-white/90 dark:bg-neutral-900/90 p-3 text-center shadow-[0_12px_32px_rgba(17,17,17,0.08)] border border-white/40 dark:border-white/5"
-                  >
-                    <p className="text-xs text-neutral-400">{label}</p>
-                    <p className="mt-1 font-heading text-lg font-semibold text-foreground">
-                      {value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
+          </a>
+        </div>
+        <div className="relative mx-auto aspect-[1.05/1] w-full max-w-[630px] ">
+          <div className="absolute inset-[8%] rounded-[48%] bg-[#f8f4e3]/20" />
+          <div className="absolute inset-[15%_8%_4%_20%] rounded-[48%_48%_20%_20%] bg-[#f8f4e3]/20" />
+          <Image
+            src={Assets.illustrations.intro4}
+            alt="A HUGGED parent feeling calm and supported"
+            fill
+            priority
+            sizes="(max-width: 1024px) 90vw, 48vw"
+            className="relative z-10 object-contain object-bottom drop-shadow-[0_18px_20px_rgba(51,51,51,.10)]"
+          />
+          {/* <Image src="/images/brand-character-design/baby/bb-laugh.png" alt="A happy HUGGED baby character" width={215} height={270} className="absolute bottom-0 right-0 z-20 w-[30%] object-contain" priority /> */}
+          <div className="absolute left-1 top-[5%] z-20 rounded-2xl bg-white px-4 py-3 text-sm font-bold text-[#333333] shadow-lg shadow-[#333333]/10 sm:left-2">
+            No guilt. Just support.{" "}
+            <Heart className="ml-1 inline size-4 fill-[#ff6f61] text-[#ff6f61]" />
+          </div>
+          <div className="absolute bottom-[10%] left-[2%] z-20 rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-[#333333]/75 shadow-lg shadow-[#333333]/10">
+            Made for people who care.
+          </div>
         </div>
       </div>
-    </SectionFrame>
+    </section>
   );
 }
