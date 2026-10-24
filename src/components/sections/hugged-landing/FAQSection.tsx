@@ -1,45 +1,85 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useTranslations } from "@/lib/locale-context";
-import { SectionHeading } from "@/components/shared/section-heading";
-import { SectionFrame, Reveal } from "./shared";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-export function FAQSection() {
-  const messages = useTranslations();
+const faqs = [
+  [
+    "What is HUGGED?",
+    "HUGGED is your parenting village: a place to connect with other parents, ask questions, learn, find support and feel a little less alone in the parenting journey.",
+  ],
+  [
+    "What is the Village?",
+    "Village is the main parenting community inside HUGGED. You can discover Families to connect with other parents and explore Programs for guided learning and support.",
+  ],
+  [
+    "What is the difference between Families and Programs?",
+    "Families are for connecting: talking, asking questions and sharing experiences with other parents. Programs are guided experiences with activities, resources and support around a parenting or child-development goal.",
+  ],
+  [
+    "Do I have to pay to use HUGGED?",
+    "Many parts of HUGGED are available without buying a Program. Some Programs, webinars, resources or services may be paid. Any payment requirements are shown before purchase.",
+  ],
+  [
+    "What is Meet?",
+    "Meet is designed to help parents discover nearby connections and meetups. Availability can vary; check the HUGGED app for current options. You choose if and how you connect.",
+  ],
+  [
+    "What is the Feed?",
+    "Feed is a place to read, share and talk about everyday parenting: ask a question, share something that worked, celebrate a small win or hear what other parents are going through.",
+  ],
+  [
+    "Can I share something without showing my name?",
+    "Some conversations support anonymous posting. Check the post composer for the anonymous option. HUGGED’s community spaces are intended to be supportive, but anonymity is not a promise of absolute secrecy.",
+  ],
+  [
+    "What will I find inside the Guide?",
+    "Guide brings together parenting resources, webinars and expert support. The available resources and sessions may change over time.",
+  ],
+  [
+    "Can I talk to an expert through HUGGED?",
+    "You can explore experts and request guidance or a consultation where available. Requests may be coordinated by the HUGGED team; instant booking is not guaranteed.",
+  ],
+  [
+    "What can I manage from my Profile?",
+    "Your Profile is where you can review your account and available settings. The exact child details, saved items and preferences may depend on the features currently available in your app.",
+  ],
+];
 
-  // Select the 8 most critical questions in a structured order
-  const importantIndices = [0, 1, 9, 11, 4, 3, 5, 6];
-  const faqItems = importantIndices
-    .map((index) => messages.faq.items[index])
-    .filter(Boolean);
-
+export default function FAQSection() {
   return (
-    <SectionFrame id="faq" className="py-12 md:py-16 lg:py-24">
-      <Reveal>
-        <SectionHeading
-          eyebrow="FAQs"
-          title={messages.faq.title}
-          description={messages.faq.description}
-        />
-      </Reveal>
-      <div className="mt-10 grid gap-4 max-w-4xl mx-auto">
-        <Accordion type="multiple" className="space-y-5">
-          {faqItems.map((item: { question: string; answer: string }) => (
-            <Reveal key={item.question}>
-              <AccordionItem
-                value={item.question}
-                className="rounded-[2rem] border border-border/80 dark:border-white/5 bg-white/75 dark:bg-neutral-900/75 px-6 py-3 shadow-[0_4px_20px_rgba(44,43,40,0.02)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(44,43,40,0.04)]"
-              >
-                <AccordionTrigger className="text-left text-base font-semibold text-foreground dark:text-neutral-100 hover:text-coral dark:hover:text-coral transition-colors duration-250 py-3 cursor-pointer">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-2 text-sm leading-7 text-neutral-700 dark:text-neutral-300 border-t border-border/50 dark:border-white/5 mt-3">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            </Reveal>
+    <section
+      id="faqs"
+      className="scroll-mt-20 bg-[#f8f4e3] px-5 py-16 md:px-10 md:py-24"
+    >
+      <div className="mx-auto max-w-[960px]">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-bold  tracking-[.22em] text-[#333333]">
+            FAQ's
+          </p>
+          <h2 className="mt-4 font-heading text-4xl font-bold tracking-[-.035em] text-[#333333] md:text-5xl">
+            A few things you might be wondering.
+          </h2>
+        </div>
+        <Accordion type="multiple" className="mt-10 space-y-3">
+          {faqs.map(([question, answer], i) => (
+            <AccordionItem
+              key={question}
+              value={`faq-${i}`}
+              className="rounded-2xl border border-[#333333]/10 bg-white px-5 shadow-sm md:px-7"
+            >
+              <AccordionTrigger className="text-left text-base font-semibold text-[#333333] hover:text-[#ff6f61]">
+                {question}
+              </AccordionTrigger>
+              <AccordionContent className="text-sm leading-7 text-[#333333]/75">
+                {answer}
+              </AccordionContent>
+            </AccordionItem>
           ))}
         </Accordion>
       </div>
-    </SectionFrame>
+    </section>
   );
 }

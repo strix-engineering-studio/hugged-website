@@ -5,10 +5,11 @@ import Instagram from "../../../public/instagram.svg";
 import Youtube from "../../../public/youtube.svg";
 import Linkedin from "../../../public/linkedin.svg";
 import Facebook from "../../../public/facebook.svg";
-import HUGGEDTm from "../../../public/Hugged_TM.png";
 import { Button } from "../ui/button";
-import { ArrowRight, ChevronDown, Hamburger, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Assets } from "@/lib/assets";
+import { PLAY_STORE_URL } from "@/lib/constant";
+import Link from "next/link";
 
 export const huggedSocials = [
   {
@@ -87,19 +88,12 @@ export function Header({ onNavigate }: { onNavigate: (id: string) => void }) {
               </button>
             ))}
           </nav>
-          {/*<nav aria-label="HUGGED social links" className="flex items-center gap-1">
-            {huggedSocials.map(({ label, href, icon: Icon }) => 
-              <a key={label} href={href} target="_blank" rel="noreferrer" className="rounded-full p-3 transition hover:bg-[#333333]/5 hover:text-[#333333] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5eb5a6]">
-                <Image src={Icon} alt={label} className="size-5" />
-              </a>
-            )}
-          </nav> */}
-          <Button
-            onClick={() => onNavigate("download")}
-            className="h-11 rounded-full bg-[#ff6f61] px-6 text-white font-black"
-          >
-            <h2>Try HUGGED</h2>{" "}
-          </Button>
+
+          <Link href={PLAY_STORE_URL} target="_blank">
+            <Button className="h-11 rounded-full bg-[#ff6f61] px-6 text-white font-black">
+              <h2>Try HUGGED</h2>
+            </Button>
+          </Link>
         </div>
         <button
           className="grid size-11 place-items-center rounded-full border border-[#333333]/15 bg-white xl:hidden"

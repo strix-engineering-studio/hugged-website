@@ -1,6 +1,5 @@
 import { PLAY_STORE_URL } from "@/lib/constant";
 import Image from "next/image";
-import { BrandMark } from "../sections/hugged-landing";
 import {
   InstagramLogo,
   LinkedinLogo,
@@ -8,6 +7,7 @@ import {
   YoutubeLogo,
 } from "@phosphor-icons/react";
 import { Assets } from "@/lib/assets";
+import { BrandMark } from "../shared/brand-mark";
 
 const socialLinks = [
   {

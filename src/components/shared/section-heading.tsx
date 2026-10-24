@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 export function SectionHeading({
   eyebrow,
-title,
+  title,
   description,
   className,
 }: {
